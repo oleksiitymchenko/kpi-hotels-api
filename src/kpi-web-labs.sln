@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kpi.Hotels.Api", "Kpi.Hotels.Api\Kpi.Hotels.Api.csproj", "{D7643344-2F92-4AFE-B3CF-2B8F30F968B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kpi.Hotels.Dataclient", "Kpi.Hotels.Dataclient\Kpi.Hotels.Dataclient.csproj", "{B6559E8A-F464-4A9F-9ECD-23CCFB6083CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D7643344-2F92-4AFE-B3CF-2B8F30F968B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7643344-2F92-4AFE-B3CF-2B8F30F968B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7643344-2F92-4AFE-B3CF-2B8F30F968B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7643344-2F92-4AFE-B3CF-2B8F30F968B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6559E8A-F464-4A9F-9ECD-23CCFB6083CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6559E8A-F464-4A9F-9ECD-23CCFB6083CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6559E8A-F464-4A9F-9ECD-23CCFB6083CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6559E8A-F464-4A9F-9ECD-23CCFB6083CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BFB0BEE9-DC34-4E87-A9DA-1F4983B2E61E}
+	EndGlobalSection
+EndGlobal

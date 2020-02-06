@@ -9,9 +9,14 @@ namespace Kpi.Hotels.Dataclient.Context
         {
         }
 
-        DbSet<Client> Clients { get; set; }
-        DbSet<Order> Orders { get; set; }
-        DbSet<Room> Rooms { get; set; }
-        DbSet<ServiceClass> ServiceClasses { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
+
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Room> Rooms { get; set; }
+        public DbSet<ServiceClass> ServiceClasses { get; set; }
     }
 }

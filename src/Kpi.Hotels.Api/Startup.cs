@@ -20,6 +20,7 @@ namespace kpi_hotels_api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc(opt => opt.EnableEndpointRouting = false);
             services.AddControllers();
             services.AddDbContext<HotelsContext>(item => item.UseSqlServer(Configuration["HotelsDbConnectionString"], b => b.MigrationsAssembly("Kpi.Hotels.Dataclient")));
         }
@@ -31,6 +32,8 @@ namespace kpi_hotels_api
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseMvcWithDefaultRoute();
+            app.UseStaticFiles();
             app.UseRouting();
 
             app.UseAuthorization();

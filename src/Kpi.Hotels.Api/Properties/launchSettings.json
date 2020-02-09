@@ -20,7 +20,7 @@
     "kpi_hotels_api": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "clients",
+      "launchUrl": "gui/clients",
       "applicationUrl": "http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

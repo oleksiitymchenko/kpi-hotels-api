@@ -14,9 +14,9 @@ namespace Kpi.Hotels.Dataclient.Context
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<Client> Clients { get; set; }
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<Room> Rooms { get; set; }
-        public DbSet<ServiceClass> ServiceClasses { get; set; }
+        public DbSet<Kpi.Hotels.Dataclient.Context.Models.Client> Clients { get; set; }
+        public DbSet<Kpi.Hotels.Dataclient.Context.Models.Order> Orders { get; set; }
+        public DbSet<Kpi.Hotels.Dataclient.Context.Models.Room> Rooms { get; set; }
+        public DbSet<Kpi.Hotels.Dataclient.Context.Models.ServiceClass> ServiceClasses { get; set; }
     }
 }

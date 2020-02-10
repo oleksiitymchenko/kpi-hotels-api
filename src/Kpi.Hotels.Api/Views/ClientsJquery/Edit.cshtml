@@ -10,50 +10,80 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="FirstName" class="control-label"></label>
-                <input asp-for="FirstName" class="form-control" />
-                <span asp-validation-for="FirstName" class="text-danger"></span>
+                <input id="input-FirstName" class="form-control" />
             </div>
             <div class="form-group">
                 <label asp-for="LastName" class="control-label"></label>
-                <input asp-for="LastName" class="form-control" />
-                <span asp-validation-for="LastName" class="text-danger"></span>
+                <input id="input-LastName" class="form-control" />
             </div>
             <div class="form-group">
                 <label asp-for="PhoneNumber" class="control-label"></label>
-                <input asp-for="PhoneNumber" class="form-control" />
-                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                <input id="input-PhoneNumber" class="form-control" />
             </div>
             <div class="form-group">
                 <label asp-for="Address" class="control-label"></label>
-                <input asp-for="Address" class="form-control" />
-                <span asp-validation-for="Address" class="text-danger"></span>
+                <input id="input-Address" class="form-control" />
             </div>
             <div class="form-group">
                 <label asp-for="Nationality" class="control-label"></label>
-                <input asp-for="Nationality" class="form-control" />
-                <span asp-validation-for="Nationality" class="text-danger"></span>
+                <input id="input-Nationality" class="form-control" />
             </div>
             <div class="form-group">
                 <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
+                <input id="input-Email" class="form-control" />
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <button type="button" class="btn btn-primary" onclick="save(modelId)">Save</button>
             </div>
-        </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a href="#" onclick="redirectToList()">Back to List</a>
 </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        const modelId = "@Model.Id";
+
+        $(document).ready(() => {
+            console.log('document-ready');
+            $.get({
+                url: '../../api/clients/' + modelId,
+                success: (data) => {
+                    $('#input-FirstName').val(data.firstName);
+                    $('#input-LastName').val(data.lastName);
+                    $('#input-PhoneNumber').val(data.phoneNumber);
+                    $('#input-Address').val(data.address);
+                    $('#input-Nationality').val(data.nationality);
+                    $('#input-Email').val(data.email);
+                }
+            });
+        });
+        const save = (id) => {
+            const client = Object.assign({}, {
+                id: modelId,
+                firstName: $('#input-FirstName').val(),
+                lastName: $('#input-LastName').val(),
+                phoneNumber: $('#input-PhoneNumber').val(),
+                address: $('#input-Address').val(),
+                nationality: $('#input-Nationality').val(),
+                email: $('#input-Email').val()
+            });
+            $.ajax({
+                url: `../../api/clients/${modelId}`,
+                type: "PUT",
+                data: JSON.stringify(client),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: redirectToList()
+            });
+            console.log(client);
+        };
+        const redirectToList = () => window.location.replace("../ClientsJquery");
+        const redirectToEdit = () => window.location.replace(`../ClientsJquery/Edit?id=${modelId}`);
+    </script>
 }

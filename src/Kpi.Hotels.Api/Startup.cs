@@ -23,6 +23,14 @@ namespace kpi_hotels_api
             services.AddMvc(opt => opt.EnableEndpointRouting = false);
             services.AddControllers();
             services.AddDbContext<HotelsContext>(item => item.UseSqlServer(Configuration["HotelsDbConnectionString"], b => b.MigrationsAssembly("Kpi.Hotels.Dataclient")));
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

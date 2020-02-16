@@ -1,6 +1,6 @@
 import { serviceClass } from './service-class';
 
-export	interface room {
+export	class room {
     id: any;
     serviceClassId: any;
     serviceClass: serviceClass;

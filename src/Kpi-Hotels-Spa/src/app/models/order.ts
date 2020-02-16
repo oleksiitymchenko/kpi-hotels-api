@@ -1,7 +1,7 @@
 import { client } from './Client';
 import { room } from './room';
 
-export	interface order {
+export	class order {
 	id: any;
 	arrivalDate: Date;
 	departureDate: Date;

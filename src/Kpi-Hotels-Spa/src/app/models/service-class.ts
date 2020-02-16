@@ -1,6 +1,6 @@
 import { roomKind } from './room-kind';
 
-export	interface serviceClass {
+export	class serviceClass {
 	id: any;
 	roomKind: roomKind;
 	roomPrice: number;

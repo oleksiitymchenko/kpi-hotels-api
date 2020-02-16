@@ -6,11 +6,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Kpi.Hotels.Dataclient.Context;
 using Kpi.Hotels.Dataclient.Context.Models;
+using Microsoft.AspNetCore.Cors;
 
 namespace kpi_hotels_api.ApiControllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("CorsPolicy")]
     public class OrdersController : ControllerBase
     {
         private readonly HotelsContext _context;

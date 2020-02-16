@@ -1,0 +1,21 @@
+#iframeid {
+    width:100% !important;
+    height:1100px !important; 
+    border: 1px solid black;
+}
+.textbox-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.textbox-container button{
+    width: 30%;
+    border-right: 6px solid darkblue;
+    border-radius: 0;
+}
+
+.textbox-container input{
+    width: 70%;
+}

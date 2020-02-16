@@ -1,2 +1,5 @@
-<iframe width="100%" height="1000px" frameBorder="0" [src]="urlSafe"></iframe>
+<h1>Clients are displayed in Iframe</h1>
+<button class="btn btn-primary" (click)="postMessage()">Post message to the iFrame</button>
+<input (keyup)="onKey($event)">
+<iframe width="100%" height="1000px" frameBorder="0" [src]="urlSafe" id="iframeid"></iframe>
 

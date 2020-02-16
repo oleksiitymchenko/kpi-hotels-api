@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   //hotelsApiUrl: 'http://localhost:5000/'
-  hotelsApiUrl: 'http://kpi-hotels-api.azurewebsites.net/'
+  hotelsApiUrl: 'http://localhost:5000/'
 };
 
 /*

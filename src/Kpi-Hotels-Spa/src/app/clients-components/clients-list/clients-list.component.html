@@ -1,7 +1,7 @@
 <h1>Clients list</h1>
 
 <p>
-    <a href="#" onclick="redirectToCreate()">Create New</a>
+    <a href="#" href="#" [routerLink]="['create']">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -36,10 +36,11 @@
             <td>{{client.nationality}}</td>
             <td>{{client.email}}</td>
             <td>
-                <a href="#" [routerLink]="['clients/edit', client.id]"> Edit </a>|
-                <a href="#" [routerLink]="['clients/details', client.id]">Details</a>|
-                <a href="#" [routerLink]="['clients/delete', client.id]">Delete</a>
+                <a href="#" [routerLink]="['edit', client.id]"> Edit </a>|
+                <a href="#" [routerLink]="['details', client.id]">Details</a>|
+                <a href="#" [routerLink]="['delete', client.id]">Delete</a>
             </td>
         </tr>
     </tbody>
 </table>
+<router-outlet></router-outlet>

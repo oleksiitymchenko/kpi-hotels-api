@@ -14,10 +14,10 @@ const routes: Routes = [
   {
     path: 'clients',
     component: ClientsListComponent,
-  },
-  {
-    path: 'clients/create',
-    component: ClientsCreateComponent
+    children: [{
+      path: 'create',
+      component: ClientsCreateComponent
+    }]
   },
   {
     path: 'clients/delete:id',

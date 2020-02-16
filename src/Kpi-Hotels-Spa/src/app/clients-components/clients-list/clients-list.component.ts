@@ -13,13 +13,14 @@ export class ClientsListComponent implements OnInit, OnDestroy {
   private subscription;
 
   ngOnInit(): void {
+    console.log("INIT");
     this.subscription = this.service.getAllClients().subscribe(
       x => {
         this.clientsList = x;
         console.log(x);
       });
   }
-  
+
   ngOnDestroy():void{
     this.subscription.unsubscribe();
   }

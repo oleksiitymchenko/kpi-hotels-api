@@ -24,7 +24,7 @@ export class ClientsCreateComponent implements OnInit {
     private formBuilder: FormBuilder, 
     private router: Router, 
     private apiService: ClientsService) {
-     }
+    }
 
   ngOnInit(): void {
   }
@@ -39,7 +39,6 @@ export class ClientsCreateComponent implements OnInit {
     };
     this.apiService
       .createClient(Object.assign(new client(), clientToCreate))
-      .subscribe(x => console.log(x));
+      .subscribe(x => {console.log(x); this.router.navigate(["/clients"])});
   }
-
 }

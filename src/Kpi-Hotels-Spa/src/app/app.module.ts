@@ -15,6 +15,7 @@ import { ClientsDetailsComponent } from './clients-components/clients-details/cl
 import { ClientsDeleteComponent } from './clients-components/clients-delete/clients-delete.component';
 import { ClientsService } from './services/clients.service'
 import { HttpModule } from '@angular/http';
+import { ClientsEditComponent } from './clients-components/clients-edit/clients-edit.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HttpModule } from '@angular/http';
     ClientsIframeComponent,
     ClientsCreateComponent,
     ClientsDetailsComponent,
-    ClientsDeleteComponent
+    ClientsDeleteComponent,
+    ClientsEditComponent
   ],
   imports: [
     BrowserModule,

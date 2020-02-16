@@ -8,24 +8,29 @@ import { RoomsListComponent } from './rooms-components/rooms-list/rooms-list.com
 import { ClientsCreateComponent } from './clients-components/clients-create/clients-create.component'
 import { ClientsDeleteComponent } from './clients-components/clients-delete/clients-delete.component'
 import { ClientsDetailsComponent } from './clients-components/clients-details/clients-details.component'
+import { ClientsEditComponent } from './clients-components/clients-edit/clients-edit.component'
 
 const routes: Routes = [
   { path: '',   redirectTo: '/clients', pathMatch: 'full' },
   {
     path: 'clients',
     component: ClientsListComponent,
-    children: [{
-      path: 'create',
-      component: ClientsCreateComponent
-    }]
   },
   {
-    path: 'clients/delete:id',
+    path: 'clients-create',
+    component: ClientsCreateComponent
+  },
+  {
+    path: 'clients-delete/:id',
     component: ClientsDeleteComponent
   },
   {
-    path: 'clients/details:id',
+    path: 'clients-details/:id',
     component: ClientsDetailsComponent
+  },
+  {
+    path: 'clients-edit/:id',
+    component: ClientsEditComponent
   },
   {
     path: 'orders',
@@ -46,7 +51,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

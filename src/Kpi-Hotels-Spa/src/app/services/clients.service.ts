@@ -34,17 +34,18 @@ export class ClientsService {
     }
   
     public getClientById(id: string): Observable<client> {
+      console.log(id);
       return this.http
         .get(`${API_URL}api/clients/${id}`)
         .pipe(
           map(response => {
-            const dataList = response.json();
-            return dataList.map((data) => Object.assign(new client(), data));
+            const data = response.json();
+            return Object.assign(new client(), data);
         }), catchError(this.handleError));
     }
   
-    public updateClient(todo: client) {
-      return this.http.put(`${API_URL}api/clients`, client)
+    public updateClient(client: client) {
+      return this.http.put(`${API_URL}api/clients/${client.id}`, client)
       .pipe(
         map(response => { console.log(response)}),
         catchError(this.handleError)

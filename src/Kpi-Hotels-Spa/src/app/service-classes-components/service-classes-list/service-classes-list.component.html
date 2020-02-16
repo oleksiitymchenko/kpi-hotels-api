@@ -1,1 +1,25 @@
-<p>service-classes works!</p>
+<h1>Service classes list</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ServiceClassKind
+            </th>
+            <th>
+                ServiceClassPrice
+            </th>
+        </tr>
+    </thead>
+    <tbody id="tableBody">
+        <tr *ngFor="let serviceClass of serviceClassesList">
+            <td>{{serviceClass.roomKind}}</td>
+            <td>{{serviceClass.roomPrice}}</td>
+            <td>
+                <!-- <a href="#" [routerLink]="['/ServiceClasses-edit', ServiceClass.id]"> Edit </a>|
+                <a href="#" [routerLink]="['/ServiceClasses-details', ServiceClass.id]">Details</a>|
+                <a href="#" [routerLink]="['/ServiceClasses-delete', ServiceClass.id]">Delete</a> -->
+            </td>
+        </tr>
+    </tbody>
+</table>

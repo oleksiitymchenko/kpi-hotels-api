@@ -1,1 +1,33 @@
-<p>rooms works!</p>
+<h1>Rooms list</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ServiceClass
+            </th>
+            <th>
+                Floor
+            </th>
+            <th>
+                RoomNumber
+            </th>
+            <th>
+                FridgeIncluded
+            </th>
+        </tr>
+    </thead>
+    <tbody id="tableBody">
+        <tr *ngFor="let room of roomList">
+            <td>{{room.serviceClass}}</td>
+            <td>{{room.floor}}</td>
+            <td>{{room.roomNumber}}</td>
+            <td>{{room.fridgeIncluded}}</td>
+            <td>
+                <!-- <a href="#" [routerLink]="['/rooms-edit', Room.id]"> Edit </a>|
+                <a href="#" [routerLink]="['/rooms-details', Room.id]">Details</a>|
+                <a href="#" [routerLink]="['/rooms-delete', Room.id]">Delete</a> -->
+            </td>
+        </tr>
+    </tbody>
+</table>

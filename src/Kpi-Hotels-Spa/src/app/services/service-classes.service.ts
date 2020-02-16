@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment'
 import { Http } from '@angular/http';
-import { ServiceClass } from '../models/ServiceClass';
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { serviceClass } from '../models/service-class';
@@ -16,17 +15,17 @@ export class ServiceClassService {
     private http: Http
     ) { }
   
-    public getAllServiceClasss(): Observable<serviceClass[]> {
+    public getAllServiceClasses(): Observable<serviceClass[]> {
       return this.http
         .get(`${API_URL}api/ServiceClasses`)
         .pipe(
           map(response => {
             const dataList = response.json();
-            return dataList.map((data) => Object.assign(new ServiceClass(), data));
+            return dataList.map((data) => Object.assign(new serviceClass(), data));
         }), catchError(this.handleError));
     }
   
-    public createServiceClass(ServiceClass: ServiceClass) {
+    public createServiceClass(ServiceClass: serviceClass) {
       return this.http.post(`${API_URL}api/ServiceClasses`, ServiceClass)
       .pipe(
         map(response => { console.log(response)}),
@@ -34,18 +33,18 @@ export class ServiceClassService {
       );
     }
   
-    public getServiceClassById(id: string): Observable<ServiceClass> {
+    public getServiceClassById(id: string): Observable<serviceClass> {
       console.log(id);
       return this.http
         .get(`${API_URL}api/ServiceClasses/${id}`)
         .pipe(
           map(response => {
             const data = response.json();
-            return Object.assign(new ServiceClass(), data);
+            return Object.assign(new serviceClass(), data);
         }), catchError(this.handleError));
     }
   
-    public updateServiceClass(ServiceClass: ServiceClass) {
+    public updateServiceClass(ServiceClass: serviceClass) {
       return this.http.put(`${API_URL}api/ServiceClasses/${ServiceClass.id}`, ServiceClass)
       .pipe(
         map(response => { console.log(response)}),

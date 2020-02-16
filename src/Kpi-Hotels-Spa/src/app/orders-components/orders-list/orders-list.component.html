@@ -1,1 +1,37 @@
-<p>orders works!</p>
+<h1>Orders list</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ArrivalDate
+            </th>
+            <th>
+                DepartureDate
+            </th>
+            <th>
+                Total
+            </th>
+            <th>
+                Room
+            </th>
+            <th>
+                Client
+            </th>
+        </tr>
+    </thead>
+    <tbody id="tableBody">
+        <tr *ngFor="let order of orderList">
+            <td>{{order.arrivalDate}}</td>
+            <td>{{order.departureDate}}</td>
+            <td>{{order.total}}</td>
+            <td>{{order.room}}</td>
+            <td>{{order.client}}</td>
+            <td>
+                <!-- <a href="#" [routerLink]="['/orders-edit', order.id]"> Edit </a>|
+                <a href="#" [routerLink]="['/orders-details', order.id]">Details</a>|
+                <a href="#" [routerLink]="['/orders-delete', order.id]">Delete</a> -->
+            </td>
+        </tr>
+    </tbody>
+</table>

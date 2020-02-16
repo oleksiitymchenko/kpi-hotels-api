@@ -1,11 +1,9 @@
-declare module server {
-	interface client {
-		id: any;
-		firstName: string;
-		lastName: string;
-		phoneNumber: string;
-		address: string;
-		nationality: string;
-		email: string;
-	}
+export	interface client {
+	id: any;
+	firstName: string;
+	lastName: string;
+	phoneNumber: string;
+	address: string;
+	nationality: string;
+	email: string;
 }

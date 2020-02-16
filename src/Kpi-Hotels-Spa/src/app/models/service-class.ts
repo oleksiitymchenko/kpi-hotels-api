@@ -1,7 +1,7 @@
-declare module server {
-	interface serviceClass {
-		id: any;
-		roomKind: server.roomKind;
-		roomPrice: number;
-	}
+import { roomKind } from './room-kind';
+
+export	interface serviceClass {
+	id: any;
+	roomKind: roomKind;
+	roomPrice: number;
 }

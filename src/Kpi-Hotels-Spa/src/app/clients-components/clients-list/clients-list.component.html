@@ -1,0 +1,45 @@
+<h1>Clients list</h1>
+
+<p>
+    <a href="#" onclick="redirectToCreate()">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                FirstName
+            </th>
+            <th>
+                LastName
+            </th>
+            <th>
+                PhoneNumber
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Nationality
+            </th>
+            <th>
+                Email
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="tableBody">
+        <tr *ngFor="let client of clientsList">
+            <td>{{client.firstName}}</td>
+            <td>{{client.lastName}}</td>
+            <td>{{client.phoneNumber}}</td>
+            <td>{{client.address}}</td>
+            <td>{{client.nationality}}</td>
+            <td>{{client.email}}</td>
+            <td>
+                <a href="#" onclick="redirectToEdit('${client.id}')">Edit</a>|
+                <a href="#" onclick="redirectToDetails('${client.id}')">Details</a>|
+                <a href="#" onclick="redirectToDelete('${client.id}')">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

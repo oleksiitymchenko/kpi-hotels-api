@@ -1,8 +1,6 @@
-declare module server {
-	const enum roomKind {
-		single,
-		double,
-		triple,
-		quad,
-	}
+export	const enum roomKind {
+	single,
+	double,
+	triple,
+	quad,
 }

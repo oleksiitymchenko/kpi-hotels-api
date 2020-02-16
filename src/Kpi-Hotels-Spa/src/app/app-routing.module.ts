@@ -1,31 +1,31 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ClientsComponent } from './clients/clients.component'
+import { ClientsListComponent } from './clients-components/clients-list/clients-list.component'
 import { ClientsIframeComponent } from './clients-iframe/clients-iframe.component'
-import { OrdersComponent } from './orders/orders.component'
-import { ServiceClassesComponent } from './service-classes/service-classes.component'
-import { RoomsComponent } from './rooms/rooms.component'
+import { OrdersListComponent } from './orders-components/orders-list/orders-list.component'
+import { ServiceClassesListComponent } from './service-classes-components/service-classes-list/service-classes-list.component'
+import { RoomsListComponent } from './rooms-components/rooms-list/rooms-list.component'
 
 const routes: Routes = [
   {
     path: '',
-    component: ClientsComponent
+    component: ClientsListComponent
   },
   {
     path: 'clients',
-    component: ClientsComponent
+    component: ClientsListComponent
   },
   {
     path: 'orders',
-    component: OrdersComponent
+    component: OrdersListComponent
   },
   {
     path: 'rooms',
-    component: RoomsComponent
+    component: RoomsListComponent
   },
   {
     path: 'serviceclasses',
-    component: ServiceClassesComponent
+    component: ServiceClassesListComponent
   },
   {
     path: 'clientsIframe',

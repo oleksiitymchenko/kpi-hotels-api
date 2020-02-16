@@ -1,14 +1,10 @@
-declare module server {
-	interface room {
-		id: any;
-		serviceClassId: any;
-		serviceClass: {
-			id: any;
-			roomKind: any;
-			roomPrice: number;
-		};
-		floor: number;
-		roomNumber: number;
-		fridgeIncluded: boolean;
-	}
+import { serviceClass } from './service-class';
+
+export	interface room {
+    id: any;
+    serviceClassId: any;
+    serviceClass: serviceClass;
+    floor: number;
+    roomNumber: number;
+    fridgeIncluded: boolean;
 }

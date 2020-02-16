@@ -30,6 +30,7 @@ namespace kpi_hotels_api
                         .AllowAnyMethod()
                         .AllowAnyHeader());
             });
+            services.AddAntiforgery(o => o.SuppressXFrameOptionsHeader = true);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

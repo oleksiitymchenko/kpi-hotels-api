@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  hotelsApiUrl: 'http://kpi-hotels-api.azurewebsites.net/'
 };

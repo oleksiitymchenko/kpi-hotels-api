@@ -36,9 +36,9 @@
             <td>{{client.nationality}}</td>
             <td>{{client.email}}</td>
             <td>
-                <a href="#" onclick="redirectToEdit('${client.id}')">Edit</a>|
-                <a href="#" onclick="redirectToDetails('${client.id}')">Details</a>|
-                <a href="#" onclick="redirectToDelete('${client.id}')">Delete</a>
+                <a href="#" [routerLink]="['clients/edit', client.id]"> Edit </a>|
+                <a href="#" [routerLink]="['clients/details', client.id]">Details</a>|
+                <a href="#" [routerLink]="['clients/delete', client.id]">Delete</a>
             </td>
         </tr>
     </tbody>

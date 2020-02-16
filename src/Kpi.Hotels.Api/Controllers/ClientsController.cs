@@ -60,7 +60,6 @@ namespace kpi_hotels_api.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [Route("Create")]
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,PhoneNumber,Address,Nationality,Email")] Client client)
         {
             if (ModelState.IsValid)
@@ -95,7 +94,6 @@ namespace kpi_hotels_api.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [Route("Edit")]
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Guid id, [Bind("Id,FirstName,LastName,PhoneNumber,Address,Nationality,Email")] Client client)
         {
             if (id != client.Id)
@@ -148,7 +146,7 @@ namespace kpi_hotels_api.Controllers
         // POST: Clients/Delete/5
         [Route("Delete")]
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
             var client = await _context.Clients.FindAsync(id);
